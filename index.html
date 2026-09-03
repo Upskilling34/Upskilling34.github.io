@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ABC Tutoring offers personalized K–12 tutoring online and in person." />
+    <title>ABC Tutoring | Find a tutor who fits</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="ABC Tutoring home"><span>ABC</span> Tutoring</a>
+      <a class="header-link" href="#tutors">Meet our tutors</a>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">LOCAL SUPPORT. REAL PROGRESS.</p>
+          <h1 id="hero-title">A tutor who meets your child where they are.</h1>
+          <p class="hero-copy">Personalized tutoring for students in grades K–12, online or in person.</p>
+          <a class="button primary" href="#tutors" data-cta="hero_find_tutor">Find a tutor</a>
+          <p class="hero-note">60-minute sessions · Flexible after-school availability</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="circle circle-one"></div><div class="circle circle-two"></div>
+          <div class="note-card"><span>✦</span><strong>Math, science & reading</strong><small>Support that builds confidence</small></div>
+        </div>
+      </section>
+
+      <section class="promise" aria-label="Our approach">
+        <div><span>01</span><p>Choose a tutor by subject, grade level, and availability.</p></div>
+        <div><span>02</span><p>Book a time that works for your family.</p></div>
+        <div><span>03</span><p>Get personal support—online or in person.</p></div>
+      </section>
+
+      <section id="tutors" class="tutors-section" aria-labelledby="tutors-title">
+        <div class="section-heading"><div><p class="eyebrow">MEET THE TEAM</p><h2 id="tutors-title">Find the right fit</h2></div><p>Explore our local tutors and book an available session in a few simple steps.</p></div>
+        <div id="tutor-grid" class="tutor-grid"></div>
+      </section>
+    </main>
+
+    <footer><a class="brand" href="#top"><span>ABC</span> Tutoring</a><p>Personalized K–12 support, close to home.</p></footer>
+
+    <dialog id="booking-dialog" aria-labelledby="booking-title">
+      <button class="close-button" aria-label="Close booking form">×</button>
+      <div id="booking-content"></div>
+    </dialog>
+    <template id="booking-template">
+      <form id="booking-form" method="dialog">
+        <p class="eyebrow">BOOK A SESSION</p><h2 id="booking-title">Book with <span class="tutor-name"></span></h2>
+        <p class="booking-intro">Choose a session that works for your family.</p>
+        <label>Requested subject<select name="subject" required><option value="">Select a subject</option><option>Elementary Math</option><option>Pre-Algebra / Algebra I</option><option>Algebra II</option><option>Science</option><option>Elementary Reading</option></select></label>
+        <label>Session format<select name="format" required><option value="">Select format</option><option>Online</option><option>In person</option></select></label>
+        <fieldset><legend>Available 60-minute times</legend><div class="slots"></div></fieldset>
+        <div class="form-row"><label>Parent name<input name="parent_name" autocomplete="name" required /></label><label>Email<input name="email" type="email" autocomplete="email" required /></label></div>
+        <div class="form-row"><label>Student first name<input name="student_name" required /></label><label>Student grade<select name="grade" required><option value="">Grade</option><option>K–2</option><option>3–5</option><option>6–8</option><option>9–12</option></select></label></div>
+        <button class="button primary submit-booking" type="submit" disabled>Confirm booking</button>
+        <p class="privacy-note">We’ll send your request to ABC Tutoring by email and text.</p>
+      </form>
+    </template>
+    <template id="confirmation-template"><section class="confirmation"><div class="check">✓</div><p class="eyebrow">REQUEST RECEIVED</p><h2>You’re all set!</h2><p>Your session with <strong class="confirmation-tutor"></strong> is scheduled for <strong class="confirmation-slot"></strong>.</p><div class="notification-note">✉ Email confirmation sent<br />▣ Text notification sent to ABC Tutoring</div><button class="button primary done-button">Back to tutors</button></section></template>
+
+    <script src="https://us.i.posthog.com/static/array.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
